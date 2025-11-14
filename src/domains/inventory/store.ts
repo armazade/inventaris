@@ -29,6 +29,13 @@ export const addProduct = (product: InventoryProduct): void => {
     products.value.push(product);
 };
 
+export const updateProduct = (updatedProduct: InventoryProduct): void => {
+    const index = products.value.findIndex(product => product.id === updatedProduct.id);
+    if (index !== -1) {
+        products.value[index] = updatedProduct;
+    }
+};
+
 export const deleteProduct = (id: number): void => {
     const index = products.value.findIndex(product => product.id == id);
     if (index !== -1) {
