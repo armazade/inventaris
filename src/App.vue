@@ -6,6 +6,7 @@ import {RouterLink, RouterView} from 'vue-router';
     <div>
         <RouterLink to="/index">Inventory</RouterLink>
         <RouterLink to="/product/create">Create Product</RouterLink>
+        <RouterLink to="/purchase">Purchase</RouterLink>
     </div>
     <RouterView />
 </template>

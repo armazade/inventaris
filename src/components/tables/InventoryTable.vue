@@ -15,8 +15,6 @@ const onDelete = id => {
 
 <template>
     <div class="container">
-        <h1>Inventory</h1>
-
         <table>
             <thead>
                 <tr>
