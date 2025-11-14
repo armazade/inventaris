@@ -1,4 +1,5 @@
 import Overview from './pages/Index.vue';
+import Create from './pages/Create.vue';
 
 export const inventoryRoutes = [
     {
@@ -9,6 +10,6 @@ export const inventoryRoutes = [
     {
         path: '/create',
         name: 'product-create',
-        component: () => import('./pages/Create.vue'),
+        component: Create,
     },
 ];
