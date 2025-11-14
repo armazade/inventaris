@@ -33,6 +33,7 @@ const onDelete = id => {
                         <input type="number" v-model.number="product.actualQuantity" min="0" />
                     </td>
                     <td>{{ product.minimumQuantity }}</td>
+                    <td><RouterLink :to="`/product/edit/${product.id}`">Edit</RouterLink></td>
                     <td><button @click="onDelete(product.id)">Delete</button></td>
                 </tr>
             </tbody>
