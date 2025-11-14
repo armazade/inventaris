@@ -1,0 +1,24 @@
+<script setup>
+import {ref} from 'vue';
+import {useRouter} from 'vue-router';
+import {addProduct} from '../store.js';
+import ProductForm from '../../../components/forms/ProductForm.vue';
+
+const router = useRouter();
+
+const product = ref({name: '', actualQuantity: 0, minimumQuantity: 0});
+
+const onSave = newProduct => {
+    addProduct(newProduct);
+    router.push('/index');
+};
+</script>
+
+<template>
+    <div>
+        <h2>Create Product</h2>
+        <ProductForm :product="product" @save="onSave" />
+    </div>
+</template>
+
+<style scoped></style>

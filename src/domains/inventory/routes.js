@@ -6,4 +6,9 @@ export const inventoryRoutes = [
         name: 'inventory-index',
         component: Overview,
     },
+    {
+        path: '/create',
+        name: 'product-create',
+        component: () => import('./pages/Create.vue'),
+    },
 ];
