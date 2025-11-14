@@ -22,6 +22,7 @@ const onDelete = id => {
                 <tr>
                     <th>Product</th>
                     <th>Actual Quantity</th>
+                    <th></th>
                     <th>Minimum Quantity</th>
                     <th>Actions</th>
                 </tr>
@@ -30,6 +31,9 @@ const onDelete = id => {
                 <tr v-for="product in products" :key="product.name">
                     <td>{{ product.name }}</td>
                     <td>{{ product.actualQuantity }}</td>
+                    <td>
+                        <input type="number" v-model.number="product.actualQuantity" min="0" />
+                    </td>
                     <td>{{ product.minimumQuantity }}</td>
                     <td><button @click="onDelete(product.id)">Delete</button></td>
                 </tr>
