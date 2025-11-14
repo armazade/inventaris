@@ -10,7 +10,7 @@ const router = useRouter();
 const product = ref({name: '', actualQuantity: 0, minimumQuantity: 0});
 
 watchEffect(() => {
-    const id = route.params.id;
+    const id = Number(route.params.id);
     const foundProduct = getProductById(id).value;
     if (foundProduct) {
         product.value = {...foundProduct};
@@ -18,8 +18,8 @@ watchEffect(() => {
 });
 
 const onSave = updatedProduct => {
-    const id = route.params.id;
-    updateProduct(updatedProduct);
+    const id = Number(route.params.id);
+    updateProduct({...updatedProduct, id});
     router.push('/index');
 };
 </script>

@@ -9,7 +9,7 @@ export const inventoryRoutes = [
         component: Overview,
     },
     {
-        path: '/create',
+        path: '/product/create',
         name: 'product-create',
         component: Create,
     },

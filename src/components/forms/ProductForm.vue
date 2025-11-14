@@ -1,4 +1,6 @@
 <script setup>
+import {useRouter} from 'vue-router';
+
 const props = defineProps({
     product: {
         type: Object,
@@ -7,9 +9,14 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['save']);
+const router = useRouter();
 
 const onSubmit = () => {
     emit('save', props.product);
+};
+
+const onCancel = () => {
+    router.push('/index');
 };
 </script>
 
@@ -29,6 +36,7 @@ const onSubmit = () => {
             <input id="minimumQuantity" v-model.number="product.minimumQuantity" type="number" required />
         </div>
         <button type="submit">Save</button>
+        <button type="button" @click="onCancel">Cancel</button>
     </form>
 </template>
 
