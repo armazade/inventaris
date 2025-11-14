@@ -25,7 +25,6 @@ export const getProductById = (id: number) =>
     computed<InventoryProduct | undefined>(() => products.value.find(product => product.id === id));
 
 // Actions
-
 export const deleteProduct = (id: number): void => {
     const index = products.value.findIndex(product => product.id == id);
     if (index !== -1) {
