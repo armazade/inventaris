@@ -1,12 +1,12 @@
-<script setup>
+<script setup lang="ts">
 import {ref} from 'vue';
 import {useRouter} from 'vue-router';
-import {addProduct} from '../store.js';
+import {addProduct, InventoryProduct} from '../store.js';
 import ProductForm from '../../../components/forms/ProductForm.vue';
 
 const router = useRouter();
 
-const product = ref({name: '', actualQuantity: 0, minimumQuantity: 0});
+const product = ref<InventoryProduct>({id: 0, name: '', actualQuantity: 0, minimumQuantity: 0});
 
 const onSave = newProduct => {
     addProduct(newProduct);
