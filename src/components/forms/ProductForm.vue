@@ -1,18 +1,14 @@
-<script setup>
+<script setup lang="ts">
 import {useRouter} from 'vue-router';
+import {InventoryProduct} from '../../domains/inventory/store';
 
-const props = defineProps({
-    product: {
-        type: Object,
-        required: true,
-    },
-});
+const {product} = defineProps<{product: InventoryProduct}>();
 
 const emit = defineEmits(['save']);
 const router = useRouter();
 
 const onSubmit = () => {
-    emit('save', props.product);
+    emit('save', product);
 };
 
 const onCancel = () => {

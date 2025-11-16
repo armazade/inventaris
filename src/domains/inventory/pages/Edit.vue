@@ -1,13 +1,18 @@
-<script setup>
+<script setup lang="ts">
 import {ref, watchEffect} from 'vue';
 import {useRoute, useRouter} from 'vue-router';
-import {getProductById, updateProduct} from '../store.js';
+import {getProductById, updateProduct, type InventoryProduct} from '../store';
 import ProductForm from '../../../components/forms/ProductForm.vue';
 
 const route = useRoute();
 const router = useRouter();
 
-const product = ref({name: '', actualQuantity: 0, minimumQuantity: 0});
+const product = ref<InventoryProduct>({
+    id: 0,
+    name: '',
+    actualQuantity: 0,
+    minimumQuantity: 0,
+});
 
 watchEffect(() => {
     const id = Number(route.params.id);
@@ -17,7 +22,7 @@ watchEffect(() => {
     }
 });
 
-const onSave = updatedProduct => {
+const onSave = (updatedProduct: InventoryProduct): void => {
     const id = Number(route.params.id);
     updateProduct({...updatedProduct, id});
     router.push('/index');

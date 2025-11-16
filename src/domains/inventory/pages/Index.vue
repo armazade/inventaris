@@ -1,10 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import InventoryTable from '../../../components/tables/InventoryTable.vue';
 import {getProducts, deleteProduct} from '../store.ts';
 
 const products = getProducts;
 
-const handleDelete = id => {
+const handleDelete = (id: number) => {
     deleteProduct(id);
 };
 </script>

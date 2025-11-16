@@ -9,7 +9,7 @@ export interface InventoryProduct {
 }
 
 // State
-export const products: Ref<InventoryProduct[]> = ref([
+export const products = ref<InventoryProduct[]>([
     {id: 1, name: 'Item A', actualQuantity: 10, minimumQuantity: 5},
     {id: 2, name: 'Item B', actualQuantity: 20, minimumQuantity: 10},
     {id: 3, name: 'Item C', actualQuantity: 15, minimumQuantity: 7},
@@ -20,9 +20,8 @@ export const products: Ref<InventoryProduct[]> = ref([
 ]);
 
 // Getters
-export const getProducts = computed<InventoryProduct[]>(() => products.value);
-export const getProductById = (id: number) =>
-    computed<InventoryProduct | undefined>(() => products.value.find(product => product.id === id));
+export const getProducts = computed(() => products.value);
+export const getProductById = (id: number) => computed(() => products.value.find(product => product.id === id));
 
 // Actions
 export const addProduct = (product: InventoryProduct): void => {
