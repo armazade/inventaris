@@ -1,9 +1,10 @@
+import type {RouteRecordRaw} from 'vue-router';
 import Overview from './pages/Index.vue';
 import Create from './pages/Create.vue';
 import Edit from './pages/Edit.vue';
 import Purchase from './pages/Purchase.vue';
 
-export const inventoryRoutes = [
+export const inventoryRoutes: RouteRecordRaw[] = [
     {
         path: '/index',
         name: 'inventory-index',
