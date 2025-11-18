@@ -1,14 +1,15 @@
-<script setup>
-const props = defineProps({
-    products: {
-        type: Array,
-        required: true,
-    },
-});
+<script setup lang="ts">
+import {InventoryProduct} from '../../domains/inventory/store';
 
-const emit = defineEmits(['delete']);
+defineProps<{
+    products: InventoryProduct[];
+}>();
 
-const onDelete = id => {
+const emit = defineEmits<{
+    delete: [id: number];
+}>();
+
+const onDelete = (id: number): void => {
     emit('delete', id);
 };
 </script>
