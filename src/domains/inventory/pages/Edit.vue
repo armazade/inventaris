@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, watchEffect} from 'vue';
+import {computed} from 'vue';
 import {useRoute, useRouter} from 'vue-router';
 import {getProductById, updateProduct, type InventoryProduct} from '../store';
 import ProductForm from '../../../components/forms/ProductForm.vue';
@@ -7,19 +7,9 @@ import ProductForm from '../../../components/forms/ProductForm.vue';
 const route = useRoute();
 const router = useRouter();
 
-const product = ref<InventoryProduct>({
-    id: 0,
-    name: '',
-    actualQuantity: 0,
-    minimumQuantity: 0,
-});
-
-watchEffect(() => {
+const product = computed(() => {
     const id = Number(route.params.id);
-    const foundProduct = getProductById(id).value;
-    if (foundProduct) {
-        product.value = {...foundProduct};
-    }
+    return getProductById(id).value;
 });
 
 const onSave = (updatedProduct: InventoryProduct): void => {
@@ -32,7 +22,7 @@ const onSave = (updatedProduct: InventoryProduct): void => {
 <template>
     <div>
         <h2>Edit Product Item</h2>
-        <ProductForm :product="product" @save="onSave" />
+        <ProductForm v-if="product" :product="product" @save="onSave" />
     </div>
 </template>
 
