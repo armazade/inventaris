@@ -5,9 +5,9 @@ import {RouterLink, RouterView} from 'vue-router';
 <template>
     <div>
         <nav>
-            <RouterLink to="/index">Inventory</RouterLink>
-            <RouterLink to="/product/create">Create Product</RouterLink>
-            <RouterLink to="/purchase">Purchase</RouterLink>
+            <RouterLink :to="{name: 'inventory-index'}">Inventory</RouterLink>
+            <RouterLink :to="{name: 'product-create'}">Create Product</RouterLink>
+            <RouterLink :to="{name: 'purchase-index'}">Purchase</RouterLink>
         </nav>
     </div>
     <RouterView />
