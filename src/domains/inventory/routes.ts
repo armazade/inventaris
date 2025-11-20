@@ -7,17 +7,17 @@ import Purchase from './pages/Purchase.vue';
 export const inventoryRoutes: RouteRecordRaw[] = [
     {
         path: '/index',
-        name: 'inventory-index',
+        name: 'inventory.index',
         component: Overview,
     },
     {
         path: '/product/create',
-        name: 'product-create',
+        name: 'product.create',
         component: Create,
     },
     {
         path: '/product/edit/:id',
-        name: 'product-edit',
+        name: 'product.edit',
         component: Edit,
     },
     {
