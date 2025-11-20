@@ -22,7 +22,7 @@ export const inventoryRoutes: RouteRecordRaw[] = [
     },
     {
         path: '/purchase',
-        name: 'purchase-index',
+        name: 'purchase.index',
         component: Purchase,
     },
 ];

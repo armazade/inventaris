@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {computed} from 'vue';
-import InventoryTable from '../../../components/tables/InventoryTable.vue';
 import {getProducts} from '../store';
+import InventoryTable from '../components/tables/InventoryTable.vue';
 
 const products = computed(() => getProducts.value.filter(product => product.actualQuantity < product.minimumQuantity));
 </script>

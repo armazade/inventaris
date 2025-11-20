@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {useRouter} from 'vue-router';
-import {InventoryProduct} from '../../domains/inventory/store';
+import {InventoryProduct} from '../../store';
 
 const {product} = defineProps<{product: InventoryProduct}>();
 

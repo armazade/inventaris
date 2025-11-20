@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import {InventoryProduct} from '../../domains/inventory/store';
+import {InventoryProduct} from '../../store';
+import {RouterLink} from 'vue-router';
 
 defineProps<{
     products: InventoryProduct[];

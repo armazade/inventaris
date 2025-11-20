@@ -2,7 +2,7 @@
 import {ref} from 'vue';
 import {useRouter} from 'vue-router';
 import {addProduct, InventoryProduct} from '../store';
-import ProductForm from '../../../components/forms/ProductForm.vue';
+import ProductForm from '../components/forms/ProductForm.vue';
 
 const router = useRouter();
 
