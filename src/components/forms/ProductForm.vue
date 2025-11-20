@@ -12,7 +12,7 @@ const onSubmit = () => {
 };
 
 const onCancel = () => {
-    router.push('/index');
+    router.push({name: 'inventory.index'});
 };
 </script>
 
